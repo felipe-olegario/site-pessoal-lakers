@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="./style_login.css">
+    <link rel="shortcut icon" href="https://www.pinclipart.com/picdir/middle/568-5685156_lakers-alternate-logo-png-la-lakers-logo-clipart.png" />
+</head>
+
+<body>
+    <!--header inicio-->
+    <header>
+        <div class="navbar">
+            <div class="container">
+                <img src="https://logodownload.org/wp-content/uploads/2019/06/los-angeles-lakers-logo.png" class="logo">
+                <h1>Lakers Brasil</h1>
+                <ul class="ul_menu">
+                    <li><a href="./home.html">PÁGINA INICIAL</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" onmouseover="aparecer()">HISTÓRIA</a></li>
+                    <li><a href="./wallpapers.html">WALLPAPPERS</a></li>
+                    <li><a href="./highlights.html">HIGHLIGHTS</a></li>
+                </ul>
+                <ul class="ul_login">
+                    <li style="color: #FDB927;">#LakerNation</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div id="div_menu_suspenso" onmouseover="aparecer()" onmouseout="desaparecer()">
+        <ul>
+            <li><a href="./historia.html">HITORIA LAKERS</a></li>
+            <li><a href="./atletas/felipe.html">HISTÓRIA FELIPE</a></li>
+            <li><a href="./atletas/lebron.html">HISTÓRIA ATLETAS</a></li>
+        </ul>
+    </div>
+    <!--header fim-->
+
+    <div class="div_background">
+        <div class="container2">
+            <div class="div_esquerda">
+                <h1>Crie uma conta para receber notícias e notificações do seu time do coração!</h1>
+            </div>
+            <div class="div_direita">
+                <ul>
+                    <li style="border-bottom: #FDB927 solid 2px;">LOGIN</li>
+                    <li><a href="./cadastro.html">CADASTRE-SE</a></li>
+                </ul>
+
+                <form id="form_login" method="post" onsubmit="return entrar()">
+                    <input type="text" class="usuario" id="user" name="login" placeholder="LOGIN">
+                    <br>
+                    <input type="password" class="senha" name="senha" placeholder="*******">
+                    <br>
+                    <button id="btn_entrar" class="btn">ENTRAR</button>
+                </form>
+
+                <div class="extra">
+                    <div id="div_erro" class="msg_erro">
+                    </div>
+
+                    <img src="img/carregando.gif" id="img_aguarde">
+
+                </div>
+                <span>Esqueceu a senha?</span>
+                <br><br>
+                <h1 id="span_login">Acesse sua conta e compartilhe videos, imagens, notícias, curiosidade do lakers e do
+                    seu atleta favorito</h1>
+
+                <div class="div_redes">
+                    <img src="./imagens/facebook.png">
+                    <img src="./imagens/gmail.png" alt="">
+                    <img src="./imagens/TWITTER_icon-icons.com_65536.png" alt="">
+                    <img src="./imagens/instagram.png">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--footer inicio-->
+
+    <!--footer fim-->
+
+</body>
+
+</html>
+<script>
+
+    function entrar() {
+        aguardar();
+        var formulario = new URLSearchParams(new FormData(form_login));
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(resposta => {
+
+            if (resposta.ok) {
+
+                resposta.json().then(json => {
+
+                    sessionStorage.login_usuario_meuapp = json.login;
+                    sessionStorage.nome_usuario_meuapp = json.nome;
+
+                    window.location.href = './atletas/lebron.html';
+                });
+
+            } else {
+
+                console.log('Erro de login!');
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizar_aguardar(texto);
+                });
+            }
+        });
+
+        return false;
+    }
+
+    function aguardar() {
+        btn_entrar.disabled = true;
+        img_aguarde.style.visibility = 'visible';
+        div_erro.style.visibility = 'hidden';
+    }
+
+    function finalizar_aguardar(resposta) {
+        btn_entrar.disabled = false;
+        img_aguarde.style.visibility = 'hidden';
+        div_erro.style.visibility = 'visible';
+        div_erro.innerHTML = resposta;
+    }
+
+    function aparecer() {
+        div_menu_suspenso.style.display = 'block';
+    }
+
+    function desaparecer() {
+        div_menu_suspenso.style.display = 'none';
+    }
+
+</script>

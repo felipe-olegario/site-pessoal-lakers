@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="./style_cadastro.css">
+    <link rel="shortcut icon" href="https://www.pinclipart.com/picdir/middle/568-5685156_lakers-alternate-logo-png-la-lakers-logo-clipart.png"/>
+</head>
+<body>
+    <!--header inicio-->
+    <header>
+        <div class="navbar">
+            <div class="container">
+                <img src="https://logodownload.org/wp-content/uploads/2019/06/los-angeles-lakers-logo.png" class="logo">
+                <h1>Lakers Brasil</h1>
+                <ul class="ul_menu">
+                    <li><a href="./home.html">PÁGINA INICIAL</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" onmouseover="aparecer()">HISTÓRIA</a></li>
+                    <li><a href="./wallpapers.html">WALLPAPPERS</a></li>
+                    <li><a href="./highlights.html">HIGHLIGHTS</a></li>
+                </ul>
+                <ul class="ul_login">
+                    <li style="color: #FDB927;">#LakerNation</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div id="div_menu_suspenso" onmouseover="aparecer()" onmouseout="desaparecer()">
+        <ul>
+            <li><a href="./historia.html">HITORIA LAKERS</a></li>
+            <li><a href="./atletas/felipe.html">HISTÓRIA FELIPE</a></li>
+            <li><a href="./atletas/lebron.html">HISTÓRIA ATLETAS</a></li>
+        </ul>
+    </div>
+    <!--header fim-->
+
+    <div class="div_background">
+        <div class="container2">
+            <div class="div_esquerda">
+                <h1>Crie uma conta para receber notícias e notificações do seu time do coração!</h1>
+            </div>
+
+            <div class="div_direita">
+                <ul>
+                    <li><a href="./login.html">LOGIN</a></li>
+                    <li style="border-bottom: #FDB927 solid 2px;">CADASTRE-SE</li>
+                </ul>
+                <div class="formulario">
+                    <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+                        <!-- <label for="nome">Nome e sobrenome</label> -->
+                            <input type="text" name="nome" class="usuario" autofocus="autofocus" placeholder="Nome completo"  required minlength="4">
+                        <!-- <label for="login">Login</label> -->
+                            <input type="text" name="login" class="senha" placeholder="Usuário para login"  required minlength="4">
+                        <!-- <label for="senha">Senha</label> -->
+                            <input type="password" name="senha" class="senha" placeholder="**********"  required minlength="4">
+                        
+                        <input type="submit" id="btn_entrar" value="Cadastrar" class="btn">
+                    </form>
+                    
+                    <img src="img/carregando.gif" id="img_aguarde" style="display: none;" width="100px">
+        
+                    <div id="div_erro" style="background-color: #bf8899; color: maroon; display: none;">
+                        Erro no cadastro
+                    </div>
+                </div>
+                <h1 id="span_cadastro">Acesse sua conta e compartilhe videos,  imagens, notícias, curiosidade do lakers e do seu atleta favorito</h1>
+                <div class="div_redes">
+                    <img src="./imagens/facebook.png">
+                    <img src="./imagens/gmail.png" alt="">
+                    <img src="./imagens/TWITTER_icon-icons.com_65536.png" alt="">
+                    <img src="./imagens/instagram.png" alt="">
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+     <!--footer inicio-->
+    
+    <!--footer fim-->
+</body>
+</html>
+
+<script>
+
+    function cadastrar() {
+        aguardar();
+        var formulario = new URLSearchParams(new FormData(form_cadastro));
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+            
+            if (response.ok) {
+
+                window.location.href='login.html';
+
+            } else {
+
+                console.log('Erro de cadastro!');
+                response.text().then(function (resposta) {
+                    div_erro.innerHTML = resposta;
+                });
+                finalizar_aguardar();
+            }
+        });
+
+        return false;
+    }
+
+    function aguardar() {
+        btn_entrar.disabled = true;
+        img_aguarde.style.display='block';
+        div_erro.style.display='none';
+    }
+
+    function finalizar_aguardar() {
+        btn_entrar.disabled = false;
+        img_aguarde.style.display='none';
+        div_erro.style.display='block';
+    }
+
+    function aparecer() {
+        div_menu_suspenso.style.display = 'block';
+    }
+
+    function desaparecer() {
+        div_menu_suspenso.style.display = 'none';
+    }
+
+</script>

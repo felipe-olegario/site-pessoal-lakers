@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lebron</title>
+    <link rel="stylesheet" href="style_atletas.css">
+    <link rel="stylesheet" href="style_lebron.css">
+    <script type="text/javascript" src="../funcoes.js"></script>
+    <link rel="shortcut icon"
+        href="https://www.pinclipart.com/picdir/middle/568-5685156_lakers-alternate-logo-png-la-lakers-logo-clipart.png" />
+
+</head>
+<script>
+    let usuario;
+
+    verificar_autenticacao();
+</script>
+
+<body onload="verificar_autenticacao()">
+    <header>
+        <div class="navbar">
+            <div class="container">
+                <img src="https://logodownload.org/wp-content/uploads/2019/06/los-angeles-lakers-logo.png" class="logo">
+                <h1>Lakers Brasil</h1>
+                <ul class="ul_menu">
+                    <li style="border-bottom: #FDB927 2px solid;">PÁGINA INICIAL</li>
+                    <li style="margin-bottom: 10px;"><a href="#" onmouseover="aparecer()">HISTÓRIA</a></li>
+                    <li><a href="./wallpapers.html">WALLPAPPERS</a></li>
+                    <li><a href="./highlights.html" style="border-bottom: #FDB927 2px solid;">HIGHLIGHTS</a></li>
+                </ul>
+                <ul class="ul_login">
+                    <li>Olá, <b id="b_usuario"></b></li>
+                    <li><a href="../login.html">LOGOUT</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div id="div_menu_suspenso" onmouseover="aparecer()" onmouseout="desaparecer()">
+        <ul>
+            <li><a href="./historia.html">HITORIA LAKERS</a></li>
+            <li><a href="./felipe.html">HISTÓRIA FELIPE</a></li>
+            <li><a href="./atletas/lebron.html">HISTÓRIA ATLETAS</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <div class="container2">
+            <div class="div_menu">
+                <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/1966.png&w=350&h=254">
+                <div class="div_nome">
+                    <h1>LEBRON JAMES</h1>
+                    <span>#23 | Ala</span>
+                </div>
+
+                <!-- END DIV_NOME -->
+
+                <div class="div_informacoes">
+                    <span>ALTURA: 2.03 m</span>
+                    <br>
+                    <span>PESO: 113 Kg</span>
+                    <br>
+                    <span>NASCIMENTO: 30/12/1984 (35)</span>
+                    <br>
+                    <span>DRAFT: 2003: Rd 1, Pick 1 (CLEVELAND)</span>
+                    <br>
+                    <span>EXPERIENCIA: 17 TEMPORADAS</span>
+                </div>
+
+                <!-- END INFORMACOES -->
+
+                <div class="estatisticas_master_lebron">
+                    <h1>Estatísticas da temporada 2019-20</h1>
+
+                    <div class="div_estatisticas_lebron">
+                        <h2>PTS<br>25.3</h2>
+                        <h2>REB<br>7.8</h2>
+                        <h2>AST<br>10.2</h2>
+                        <h2>BLK<br>0.5</h2>
+                        M nlçkm
+                    </div>
+                </div>
+            </div>
+
+            <div class="container3">
+
+                <div class="div_historia">
+                    <h1>BIOGRAFIA</h1>
+                    <p>LeBron James é um dos melhores jogadores da história do basquete. Nascido em 30 de dezembro de
+                        1984,
+                        em Akron, no estado de Ohio, nos Estados Unidos, ele iniciou sua trajetória na NBA em 2003, no
+                        Cleveland Cavaliers. Passou também pelo Miami Heat e, atualmente, defende o Los Angeles Lakers.
+                        <br><br>
+                        Apelidado de King James, LeBron foi tetracampeão da NBA, conquistando os títulos em 2012, 2013,
+                        2016
+                        e 2020.
+                        <br><br>
+                        Em todos esses anos, foi escolhido o Most Valuable Player (Jogador Mais Valioso) das Finais. Ele
+                        também foi o MVP da temporada regular em 2009, 2010, 2012 e 2013.
+                        Maior pontuador da história dos playoffs da NBA e também do All-Star Game, LeBron James foi
+                        escolhido para o time ideal da liga em 13 temporadas.
+                        <br><br>
+                        Ainda em atividade, é o terceiro maior pontuador da história da NBA, atrás apenas de Kareem
+                        Abdul-Jabbar e Karl Malone. Em 2020, ele superou Kobe Bryant. Está à frente também de Michael
+                        Jordan.
+                        <br><br>
+                        Pela Seleção dos Estados Unidos, LeBron James foi bicampeão olímpico, em Pequim 2008 e Londres
+                        2012,
+                        além de ter conquistado uma medalha de bronze em Atenas 2004. Ele também um bronze no Mundial de
+                        2006, disputado no Japão.</p>
+                </div>
+                <iframe style="float: right; margin-top: 50px;" width="36%" height="400"
+                    src="https://www.youtube.com/embed/RQtZbCwv-Q8" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+
+            <div class="container4">
+
+                <div class="div_slider">
+                    <button onclick="volta()">
+                        <</button>
+                            <img src="https://allucanheat.com/wp-content/uploads/getty-images/2017/07/164213930.jpeg"
+                                width="80%" height="70%" id="img_slide">
+                            <button onclick="proxima()">></button>
+                </div>
+                <br>
+            </div>
+
+    </main>
+
+    <footer>
+        <div class="rodape">
+            <div class="container5">
+                <p class="valores">O site tem como objetivo divugar a prática do basquete e inspirar jovens a práticar
+                    este esporte maravilhoso.
+                    O basquete me ensinou a superar obstáculos, trabalhar em
+                    equipe, nunca desistir durante a adversidade, confiança,
+                    superação, liderança, determinação, foco. </p>
+                <div class="redes">
+                    <img src="../imagens/instagram.png">
+                    <img src="../imagens/TWITTER_icon-icons.com_65536.png">
+                    <img src="../imagens/gmail.png">
+                    <img src="../imagens/facebook.png">
+                </div>
+            </div>
+            <p style="color: #505050;">Copyright © 2020 Developed by Felipe Olegario in colaboration Badtec</p>
+        </div>
+    </footer>
+</body>
+
+</html>
+<script>
+    var contador = 0;
+
+    function volta() {
+        contador -= 1;
+        console.log(contador);
+
+        if (contador == 0) {
+            img_slide.src = 'https://allucanheat.com/wp-content/uploads/getty-images/2017/07/164213930.jpeg'
+        } else if (contador == -1) {
+            img_slide.src = 'https://www.insideedition.com/sites/default/files/images/2020-07/lebron.jpg';
+        } else if (contador == -2) {
+            img_slide.src = 'https://www.yardbarker.com/media/0/e/0e89843bea490094388e568a6f579fae2384841f/thumb_16x9/rare-autographed-lebron-james-rookie-card-sets.jpg?v=1';
+        } else if (contador == 1) {
+            img_slide.src = 'https://img.bleacherreport.net/img/article/media_slots/photos/002/814/230/65e449c233b3cf1c9ee5f9a1b5cbd27f_crop_exact.jpg?w=2975&h=2048&q=85';
+        } else if (contador == 2) {
+            img_slide.src = 'https://a.espncdn.com/photo/2018/0605/r380146_600x400_3-2.jpg';
+        } else if (contador < -2) {
+            contador = 0;
+            img_slide.src = 'https://allucanheat.com/wp-content/uploads/getty-images/2017/07/164213930.jpeg';
+        }
+    }
+
+    function proxima() {
+        contador += 1;
+        console.log(contador)
+        if (contador == 0) {
+            img_slide.src = 'https://allucanheat.com/wp-content/uploads/getty-images/2017/07/164213930.jpeg'
+        } else if (contador == 1) {
+            img_slide.src = 'https://img.bleacherreport.net/img/article/media_slots/photos/002/814/230/65e449c233b3cf1c9ee5f9a1b5cbd27f_crop_exact.jpg?w=2975&h=2048&q=85';
+        } else if (contador == 2) {
+            img_slide.src = 'https://d.newsweek.com/en/full/702623/cleveland-cavaliers-star-lebron-james.jpg';
+        } else if (contador > 2) {
+            contador = 0;
+            img_slide.src = 'https://allucanheat.com/wp-content/uploads/getty-images/2017/07/164213930.jpeg';
+        } else if (contador == -2) {
+            img_slide.src = 'https://www.yardbarker.com/media/0/e/0e89843bea490094388e568a6f579fae2384841f/thumb_16x9/rare-autographed-lebron-james-rookie-card-sets.jpg?v=1';
+        } else if (contador == -1) {
+            img_slide.src = 'https://www.insideedition.com/sites/default/files/images/2020-07/lebron.jpg';
+        }
+    }
+
+    function aparecer() {
+        div_menu_suspenso.style.display = 'block';
+    }
+
+    function desaparecer() {
+        div_menu_suspenso.style.display = 'none';
+    }
+</script>

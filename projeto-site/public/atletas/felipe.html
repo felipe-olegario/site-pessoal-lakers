@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felipe</title>
+    <link rel="stylesheet" href="style_atletas.css">
+    <script type="text/javascript" src="../funcoes.js"></script>
+    <link rel="shortcut icon" href="https://www.pinclipart.com/picdir/middle/568-5685156_lakers-alternate-logo-png-la-lakers-logo-clipart.png"/>
+</head>
+<script>
+    let usuario;
+
+verificar_autenticacao();
+</script>
+
+<body onload="verificar_autenticacao()">
+<header>
+    <div class="navbar">
+        <div class="container">
+            <img src="https://logodownload.org/wp-content/uploads/2019/06/los-angeles-lakers-logo.png" class="logo">
+            <h1>Lakers Brasil</h1>
+            <ul class="ul_menu">
+                <li style="border-bottom: #FDB927 2px solid;">PÁGINA INICIAL</li>
+                <li style="margin-bottom: 10px;"><a href="#" onmouseover="aparecer()">HISTÓRIA</a></li>
+                <li><a href="./wallpapers.html">WALLPAPPERS</a></li>
+                <li><a href="./highlights.html" style="border-bottom: #FDB927 2px solid;">HIGHLIGHTS</a></li>
+            </ul>
+            <ul class="ul_login">
+                <li>Olá, <b id="b_usuario"></b></li>
+                <li><a href="../login.html">LOGOUT</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<div id="div_menu_suspenso" onmouseover="aparecer()" onmouseout="desaparecer()">
+    <ul>
+        <li><a href="../historia.html">HITORIA LAKERS</a></li>
+        <li>HISTÓRIA FELIPE</li>
+        <li><a href="./atletas/lebron.html">HISTÓRIA ATLETAS</a></li>
+    </ul>
+</div>
+
+<!-- END NAVBAR -->
+
+<main>
+    <div class="container2">
+        <div class="div_menu">
+            <img id="img_felipe" src="../imagens/FELIPE IMAGEM.jpg">
+            <div class="div_nome">
+                <h1>FELIPE OLEGARIO</h1>
+                <span>#12 | Ala</span>
+            </div>
+
+            <!-- END DIV_NOME -->
+
+            <div class="div_informacoes">
+                <span>ALTURA: 1.93 m</span>
+                <br>
+                <span>PESO: 78 Kg</span>
+                <br>
+                <span>NASCIMENTO: 07/07/2000 (20)</span>
+                <br>
+                <span>INICIO NO BASQUETE: 2018</span>
+                <br>
+                <span>EXPERIÊNCIA: 2 ANOS</span>
+            </div>
+
+            <!-- END INFORMACOES -->
+
+            <div class="estatisticas_master">
+                <div class="div_estatisticas">
+                    <div>
+                        <h1>MISSÃO</h1>
+                        <h2>Ser feliz; <br>Amar e ser amado; <br>Realização de sonhos; <br>Ajudar pessoas; <br>Ser
+                            marcante;</h2>
+                    </div>
+
+                    <div>
+                        <h1>VISÃO</h1>
+                        <h2>Me formar na faculdade <br>Especialização <br>Acumular bens <br>Viajar</h2>
+                    </div>
+
+                    <div>
+                        <h1>VALORES</h1>
+                        <h2>Honestidade <br>Respeito <br>Ética <br>Amor <br>Humor <br>Empatia</h2>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+<!-- END ESTATISTICAS_MASTER -->
+
+    <div class="container3">
+
+        <div class="div_historia">
+            <h1>BIOGRAFIA</h1>
+            <p>Durante a minha adolescência eu participei de vários esportes, como vôlei, skate, handebol, futebol,
+                tênis, mas sempre focando em apenas se divertir, sem um foco mais competitivo. Após a conclusão do
+                ensino médio eu conheci o basquete, comecei a praticar e me apaixonei pelo esporte.
+                <br><br>
+                Diferente dos outros
+                esportes, com o basquete eu sempre tentava melhorar os meus movimentos em todos os aspectos, treinava
+                diariamente e era muito competitivo. Esta mentalidade de competição e trabalho em equipe me ajudou
+                bastante em todos os aspectos, espirito de liderança, foco, força de vontade, determinação, trabalho em
+                equipe, confiar nos companheiros de equipe e saber analisar o melhor momento para realizar alguma ação.
+            </p>
+        </div>
+        <div id="div_slider">
+            <img src="" id="img_slider">
+        </div>
+    </div>
+
+</main>
+
+<!-- END MAIN -->
+
+<footer>
+    <div class="rodape">
+        <div class="container5">
+            <p class="valores">O site tem como objetivo divugar a prática do basquete e inspirar jovens a práticar este
+                esporte maravilhoso.
+                O basquete me ensinou a superar obstáculos, trabalhar em
+                equipe, nunca desistir durante a adversidade, confiança,
+                superação, liderança, determinação, foco. </p>
+            <div class="redes">
+                <img src="../imagens/instagram.png">
+                <img src="../imagens/TWITTER_icon-icons.com_65536.png">
+                <img src="../imagens/gmail.png">
+                <img src="../imagens/facebook.png">
+            </div>
+        </div>
+        <p style="color: #505050;">Copyright © 2020 Developed by Felipe Olegario in colaboration Badtec</p>
+    </div>
+</footer>
+
+</body>
+
+</html>
+<script>
+    var numImagem = 1;
+
+    function carregar() {
+        img_slider.src = "./felipe" + numImagem + ".jpg";
+        numImagem++;
+        if (numImagem > 4) {
+            numImagem = 1;
+        }
+        setTimeout(carregar, 3000);
+    }
+
+    window.addEventListener("load", carregar)
+
+    function aparecer() {
+        div_menu_suspenso.style.display = 'block';
+    }
+
+    function desaparecer() {
+        div_menu_suspenso.style.display = 'none';
+    }
+</script>

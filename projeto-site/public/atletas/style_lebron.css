@@ -1,0 +1,42 @@
+
+.estatisticas_master_lebron {
+    /* float: left; */
+    width: 40%;
+    float: right;
+    height: 225px;
+}
+.estatisticas_master_lebron h1 {
+border-bottom: #FDB927 1px solid;
+text-align: center;
+}
+.div_estatisticas_lebron {
+    /* float: left; */
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.div_slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.div_slider button {
+    height: 50px;
+    width: 45px;
+    margin: 15px;
+    font-size: 23px;
+    font-weight: bold;
+    background: transparent;
+    outline: none;
+    border: #FDB927 2px solid;
+    color: #552583;
+    outline: none;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+.div_slider button:hover {
+    background: #FDB927;
+    transition: 0.3s;
+}
